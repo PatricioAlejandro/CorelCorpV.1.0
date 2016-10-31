@@ -156,11 +156,7 @@ public class ReadFile extends javax.swing.JFrame {
             ExcelFileToRead = new FileInputStream(new File(path));
             Pattern patXLSX = Pattern.compile("..xlsx");
             Matcher m = patXLSX.matcher(path);
-            if (m.find()) {
-                aux = ReadXLSX(ExcelFileToRead);
-            } else {
-                aux = ReadXLS(ExcelFileToRead);
-            }
+            aux = ReadXLSX(ExcelFileToRead);
             txtResult.setText(aux);
             txtArchivo.setText(f.getName());
         } catch (FileNotFoundException ex) {
